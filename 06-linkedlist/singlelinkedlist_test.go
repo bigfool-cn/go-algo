@@ -46,3 +46,13 @@ func TestLinkedList_DeleteNode(t *testing.T) {
 	linkedList.DeleteNode(linkedList.FindByIndex(1))
 	linkedList.Print()
 }
+
+func TestLinkedList_Reverse(t *testing.T) {
+	linkedList := NewLinkedList()
+	for i := 0; i < 10; i++ {
+		linkedList.InsertToTail(i + 1)
+	}
+	linkedList.Print()
+	linkedList.Reverse()
+	linkedList.Print()
+}

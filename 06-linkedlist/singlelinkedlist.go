@@ -1,6 +1,8 @@
 package _6_linkedlist
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type ListNode struct {
 	next  *ListNode
@@ -111,6 +113,21 @@ func (this *LinkedList) DeleteNode(p *ListNode) bool {
 	p = nil
 	this.length--
 	return true
+}
+
+func (this *LinkedList) Reverse() {
+	if this.head == nil {
+		return
+	}
+	var pre *ListNode = nil
+	cur := this.head.next
+	for cur != nil {
+		tmp := cur.GetNext()
+		cur.next = pre
+		pre = cur
+		cur = tmp
+	}
+	this.head.next = pre
 }
 
 // Print 打印链表

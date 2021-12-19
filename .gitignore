@@ -12,5 +12,7 @@
 *.out
 
 .idea
+
+go.mod
 # Dependency directories (remove the comment below to include it)
 # vendor/
